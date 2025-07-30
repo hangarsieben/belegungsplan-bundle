@@ -11,7 +11,7 @@
 namespace Mailwurm\Belegung;
 use Psr\Log\LogLevel;
 use Contao\CoreBundle\Monolog\ContaoContext;
-use Patchwork\Utf8;
+/* Changed for C53 / PHP83 compatibility without patchwork/utf8: use Patchwork\Utf8; */
 use Contao\CoreBundle\Routing\ScopeMatcher;
 use Symfony\Component\HttpFoundation\RequestStack;
 /**
