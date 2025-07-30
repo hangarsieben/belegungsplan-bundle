@@ -65,7 +65,9 @@ class ModuleBelegungsplan extends \Module
 		{
 			/** @var BackendTemplate|object $objTemplate */
 			$objTemplate = new \BackendTemplate('be_wildcard');
-			$objTemplate->wildcard = '### ' . Utf8::strtoupper($GLOBALS['TL_LANG']['FMD']['belegungsplan'][0]) . ' ###';
+			/** Changed for C53 / PHP83 compatibility without patchwork/utf8 */
+			#$objTemplate->wildcard = '### ' . Utf8::strtoupper($GLOBALS['TL_LANG']['FMD']['belegungsplan'][0]) . ' ###';
+			$objTemplate->wildcard = '### '  . $GLOBALS['TL_LANG']['FMD']['belegungsplan'][0] . ' ###';
 			$objTemplate->title = $this->headline;
 			$objTemplate->id = $this->id;
 			$objTemplate->link = $this->name;
